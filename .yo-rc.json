@@ -1,0 +1,26 @@
+{
+  "@pnp/generator-spfx": {
+    "framework": "react",
+    "pnpFramework": "reactjs.plus",
+    "pnp-libraries": [
+      "rush@3.3"
+    ],
+    "pnp-ci": [],
+    "pnp-vetting": [
+      "csscomb"
+    ],
+    "spfxenv": "spo",
+    "pnp-testing": []
+  },
+  "@microsoft/generator-sharepoint": {
+    "environment": "spo",
+    "framework": "react",
+    "isCreatingSolution": true,
+    "version": "1.8.2",
+    "libraryName": "n-8-d-blockquote",
+    "libraryId": "fb0a4192-89b1-4efe-9e55-6ece1a5bc893",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

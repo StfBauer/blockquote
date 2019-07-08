@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "blockquote-n-8-d-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/blockquoteN8D/BlockquoteN8DWebPart.js",
+          "manifest": "./src/webparts/blockquoteN8D/BlockquoteN8DWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BlockquoteN8DWebPartStrings": "lib/webparts/blockquoteN8D/loc/{locale}.js"
+  }
+}

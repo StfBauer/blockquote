@@ -1,0 +1,23 @@
+@import "~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss";
+
+:global {
+  :root {
+
+  }
+}
+
+
+.myQuote {
+  font-family: "Pacifico", cursive;
+  font-size: 300%;
+  line-height: 110%;
+  @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+}
+
+.myQuoteFooter {
+  font-family: sans-serif;
+  font-size: 65%;
+  margin-left: 0.5em;
+
+  display: inline-block;
+}

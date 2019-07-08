@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "n-8-d-blockquote-client-side-solution",
+    "id": "fb0a4192-89b1-4efe-9e55-6ece1a5bc893",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/n-8-d-blockquote.sppkg"
+  }
+}
