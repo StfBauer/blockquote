@@ -1,23 +1,49 @@
 @import "~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss";
+$c-green: #a7bb38;
+$c-teal: #20a5ac;
+$c-orange: #ee9105;
+$c-yellow: #eeb405;
+$c-red: #dd314d;
+$c-blue: #318eb1;
+$c-yellow: #edb406;
+$c-red: #cd2941;
+$c-blue: #006581;
 
-:global {
-  :root {
 
+.myQuote{
+	font-family: "Pacifico", cursive;
+	font-size: 3rem;
+	font-weight: bold;
+	line-height: 115%;
+
+	box-sizing: border-box;
+
+  color: $c-red;
+
+  @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+  *[contentEditable='true'] {
+    border: 1px black dotted;
+    display: block;
+    min-height: 1em;
   }
 }
 
+.myQuoteFooter{
+	font-family: sans-serif;
+	font-size: 65%;
+	font-weight: normal;
 
-.myQuote {
-  font-family: "Pacifico", cursive;
-  font-size: 300%;
-  line-height: 110%;
-  @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+	margin-left: .5em;
+
+  color: black;
+  text-align: right;
+  min-height: 1em;
 }
 
-.myQuoteFooter {
-  font-family: sans-serif;
-  font-size: 65%;
-  margin-left: 0.5em;
-
-  display: inline-block;
+@supports (background-clip: text){
+	.myQuote{
+		color: transparent;
+		background: linear-gradient(135deg, #{$c-yellow} -30%, #{$c-red} 40%, #{$c-blue} 100%);
+		background-clip: text;
+	}
 }

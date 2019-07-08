@@ -12,16 +12,22 @@ import BlockquoteN8D from './components/BlockquoteN8D';
 import { IBlockquoteN8DProps } from './components/IBlockquoteN8DProps';
 
 export interface IBlockquoteN8DWebPartProps {
-  description: string;
+  quote: string;
+  author: string;
+  editable: string;
 }
 
 export default class BlockquoteN8DWebPart extends BaseClientSideWebPart<IBlockquoteN8DWebPartProps> {
 
   public render(): void {
+
     const element: React.ReactElement<IBlockquoteN8DProps > = React.createElement(
-      BlockquoteN8D,
-      {
-        description: this.properties.description
+      BlockquoteN8D, {
+        quote: this.properties.quote,
+        author: this.properties.author,
+        editable: this.displayMode === 2 ? true : false,
+        saveQuoteProperties: this.saveQuoteProperties,
+        saveAuthorProperties: this.saveAuthorProperties
       }
     );
 
@@ -36,6 +42,18 @@ export default class BlockquoteN8DWebPart extends BaseClientSideWebPart<IBlockqu
     return Version.parse('1.0');
   }
 
+  public saveQuoteProperties(propstate: IBlockquoteN8DProps){
+
+    this.properties.quote = propstate.quote;
+
+  }
+
+  public saveAuthorProperties(propstate: IBlockquoteN8DProps){
+
+    this.properties.author = propstate.author;
+
+  }
+
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -47,8 +65,11 @@ export default class BlockquoteN8DWebPart extends BaseClientSideWebPart<IBlockqu
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('quote', {
+                  label: strings.FieldLabelQuote
+                }),
+                PropertyPaneTextField('author', {
+                  label: strings.FieldLabelAuthor
                 })
               ]
             }

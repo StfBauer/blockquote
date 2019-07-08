@@ -21,7 +21,9 @@
     "description": { "default": "Blockquote Web Part" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "Blockquote - N8D"
+      "quote": "The important thing is not to stop questioning.<br>Curiosity has its own reason for existing.",
+      "author": "Albert Einstein",
+      "editable": null
     }
   }]
 }

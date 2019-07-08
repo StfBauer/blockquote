@@ -1,7 +1,8 @@
 declare interface IBlockquoteN8DWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  FieldLabelQuote: string;
+  FieldLabelAuthor: string;
 }
 
 declare module 'BlockquoteN8DWebPartStrings' {
