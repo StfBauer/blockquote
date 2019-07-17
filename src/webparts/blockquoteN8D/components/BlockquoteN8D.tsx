@@ -27,21 +27,25 @@ export default class BlockquoteN8D extends React.Component<IBlockquoteN8DProps, 
 
   public changeBlockquote = event => {
 
+    event.preventDefault();
+
     console.debug('Inner Text', event.target.innerText);
     console.debug('Inner Text', event.target.innerHTML);
     console.debug('Text Content', event.target.textContent);
     console.debug('event.fired');
 
     this.setState({
-      quote: event.target.innerHTML,
+      quote: event.target.innerText,
       author: this.state.author
     });
 
-    this.props.saveQuoteProperties(this.state);
+    this.props.saveQuoteProperties(event.target.innerHTML);
 
   }
 
   public changeBlockquoteAuthor = event => {
+
+    event.preventDefault();
 
     let newAuthor = event.target.innerText.replace(/\n/g, '');
 
@@ -52,12 +56,13 @@ export default class BlockquoteN8D extends React.Component<IBlockquoteN8DProps, 
       author: newAuthor
     });
 
-    this.props.saveAuthorProperties(this.state);
+    this.props.saveAuthorProperties(event.target.innerText);
 
   }
 
 
   public render(): React.ReactElement<IBlockquoteN8DProps> {
+
 
     console.debug('current state', this.state);
 

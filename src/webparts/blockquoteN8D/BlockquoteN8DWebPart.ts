@@ -26,6 +26,7 @@ export default class BlockquoteN8DWebPart extends BaseClientSideWebPart<IBlockqu
         quote: this.properties.quote,
         author: this.properties.author,
         editable: this.displayMode === 2 ? true : false,
+        // properties: this.properties,
         saveQuoteProperties: this.saveQuoteProperties,
         saveAuthorProperties: this.saveAuthorProperties
       }
@@ -42,15 +43,19 @@ export default class BlockquoteN8DWebPart extends BaseClientSideWebPart<IBlockqu
     return Version.parse('1.0');
   }
 
-  public saveQuoteProperties(propstate: IBlockquoteN8DProps){
+  private saveQuoteProperties = (newquote: string) => {
 
-    this.properties.quote = propstate.quote;
+    console.debug('Prop State Quote:::', newquote);
+
+    this.properties.quote = newquote;
 
   }
 
-  public saveAuthorProperties(propstate: IBlockquoteN8DProps){
+  private saveAuthorProperties = (newauthor: string) => {
 
-    this.properties.author = propstate.author;
+    console.debug('Prop State Author:::', newauthor);
+
+    this.properties.author = newauthor;
 
   }
 
