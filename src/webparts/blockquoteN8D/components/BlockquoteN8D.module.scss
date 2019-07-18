@@ -8,12 +8,10 @@ $c-blue: #006581;
 
 @import "~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss";
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Bungee&display=swap");
 
 
 .myQuote{
 	font-family: "Pacifico", cursive;
-	// font-family: 'Bungee', cursive;
 	font-size: 3rem;
 	line-height: .95em;
 
@@ -21,7 +19,12 @@ $c-blue: #006581;
 	margin: 0;
 	padding: .35em .5em;
 
-	color: $c-red;
+  color: $c-red;
+
+  &::selection{
+    color: white;
+    background: $c-teal;
+  }
 
 	*[contentEditable="true"]{
 		display: block;
@@ -32,10 +35,7 @@ $c-blue: #006581;
 		white-space: pre-wrap;
 
 		border: 1px black dotted;
-		&::selection{
-			color: white;
-			background: $c-teal;
-		}
+
 	}
 }
 

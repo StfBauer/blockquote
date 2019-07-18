@@ -26,7 +26,6 @@ export default class BlockquoteN8DWebPart extends BaseClientSideWebPart<IBlockqu
         quote: this.properties.quote,
         author: this.properties.author,
         editable: this.displayMode === 2 ? true : false,
-        // properties: this.properties,
         saveQuoteProperties: this.saveQuoteProperties,
         saveAuthorProperties: this.saveAuthorProperties
       }
