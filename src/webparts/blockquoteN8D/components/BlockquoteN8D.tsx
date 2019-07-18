@@ -21,7 +21,7 @@ export default class BlockquoteN8D extends React.Component<IBlockquoteN8DProps, 
       author: props.author
     };
 
-    this.setState(this.state);
+    // this.setState(this.state);
 
   }
 
@@ -29,22 +29,31 @@ export default class BlockquoteN8D extends React.Component<IBlockquoteN8DProps, 
 
     event.preventDefault();
 
-    console.debug('Inner Text', event.target.innerText);
-    console.debug('Inner Text', event.target.innerHTML);
+    console.clear();
+
+    console.debug('Inner Text:::\n', event.target.innerText);
+    console.debug('Inner Text:::::\n', event.target.innerHTML);
     console.debug('Text Content', event.target.textContent);
-    console.debug('event.fired');
+
+    console.debug('----- -- - -- ', event.target.innerText.indexOf('\n'));
+
+    let cleanedHTML = event.target.innerText;
+    cleanedHTML = cleanedHTML.replace(/\n/g, '<br>');
+
+    console.debug('CLEANED HTML\n', cleanedHTML);
 
     this.setState({
       quote: event.target.innerText,
       author: this.state.author
     });
 
-    this.props.saveQuoteProperties(event.target.innerHTML);
+    this.props.saveQuoteProperties(cleanedHTML);
 
   }
 
   public changeBlockquoteAuthor = event => {
 
+    console.clear();
     event.preventDefault();
 
     let newAuthor = event.target.innerText.replace(/\n/g, '');
@@ -67,7 +76,7 @@ export default class BlockquoteN8D extends React.Component<IBlockquoteN8DProps, 
     console.debug('current state', this.state);
 
 
-    if(this.props.editable){
+    if (this.props.editable) {
       console.debug('Editable');
     } else {
       console.debug('Preview');
@@ -75,8 +84,8 @@ export default class BlockquoteN8D extends React.Component<IBlockquoteN8DProps, 
 
     return (
       <blockquote className={styles.myQuote}>
-        <span contentEditable={this.props.editable} onInput={this.changeBlockquote.bind(this)} placeholder="Quote" dangerouslySetInnerHTML={{ __html: this.props.quote }} >
-        </span>
+        <div contentEditable={this.props.editable} suppressContentEditableWarning={true} onInput={this.changeBlockquote.bind(this)} placeholder="Quote" dangerouslySetInnerHTML={{ __html: this.props.quote }} >
+        </div>
         <footer className={styles.myQuoteFooter} contentEditable={this.props.editable} placeholder="Author" onInput={this.changeBlockquoteAuthor.bind(this)} >{this.props.author}</footer>
       </blockquote>
     );
